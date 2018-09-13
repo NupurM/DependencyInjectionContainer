@@ -42,6 +42,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="A\ClassA.cs" />
+    <Compile Include="A\IInterfaceA.cs" />
+    <Compile Include="B\ClassB.cs" />
+    <Compile Include="B\IInterfaceB.cs" />
     <Compile Include="DiContainer.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -49,5 +53,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
