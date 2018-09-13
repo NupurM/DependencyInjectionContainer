@@ -46,7 +46,7 @@
     <Compile Include="A\IInterfaceA.cs" />
     <Compile Include="B\ClassB.cs" />
     <Compile Include="B\IInterfaceB.cs" />
-    <Compile Include="DiContainer.cs" />
+    <Compile Include="Container\DiContainer.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -2,19 +2,19 @@
 using System.Collections.Generic;
 using System.Reflection;
 
-namespace DependencyInjectionContainer
+namespace DependencyInjectionContainer.Container
 {
     public class DiContainer
     {
         private readonly Dictionary<Type, Type> _types = new Dictionary<Type, Type>();
 
-        public void Register<TInterface, TType>()
+        public void Register<TInterface, TClass>()
         {
             if (_types.ContainsKey(typeof(TInterface)))
             {
-                throw new Exception("Type already registered");
+                throw new Exception("Interface type already registered");
             }
-            _types.Add(typeof(TInterface), typeof(TType));
+            _types.Add(typeof(TInterface), typeof(TClass));
         }
 
         public TInterface Resolve<TInterface>()
@@ -31,13 +31,13 @@ namespace DependencyInjectionContainer
             // Check if the key exists in the dictionary
             if (!_types.ContainsKey(interfaceType))
             {
-                throw new Exception("Type does not exist");
+                throw new Exception("Interface type does not exist");
             }
 
             // Get the value from the dictionary
             _types.TryGetValue(interfaceType, out Type implementation);
 
-            // Identify the dependencies of this constructor by getting constructor information
+            // Identify the dependencies of this class by getting the constructor information
             ConstructorInfo constructorInfo = implementation.GetConstructors()[0];
             var constructorParams = constructorInfo.GetParameters();
 
