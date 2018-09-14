@@ -1,5 +1,5 @@
-﻿using DependencyInjectionContainer.A;
-using System;
+﻿using System;
+using DependencyInjectionContainer.A;
 
 namespace DependencyInjectionContainer.B
 {
